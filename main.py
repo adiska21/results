@@ -3,19 +3,15 @@ from flask import Flask
 app = Flask(__name__)
 
 
-app.route("/")
-app.route("/home")
-
-
+@app.route("/")
+@app.route("/home")
 def home():
     pass
 
 
-app.route("/results/<nickname>/<int:level>/<float:rating>")
-
-
+@app.route("/results/<nickname>/<int:level>/<float:rating>")
 def results(nickname, level, rating):
-    return '''<!DOCTYPE html>
+    return f'''<!DOCTYPE html>
                 <html lang="en">
                 <head>
                     <meta charset="UTF-8">
